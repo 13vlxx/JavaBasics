@@ -7,7 +7,9 @@ public class Correction {
 //        exo1();
 //        exo2();
 //        exo3();
-        exo4();
+//        exo4();
+//        exo5();
+        exo6();
     }
 
     private static void exo1(){
@@ -80,6 +82,81 @@ public class Correction {
             System.out.println("Le tableau obtenu : " + afficheTab + "\n"
                     + "La valeur moyenne est : " + (double) sum / nbrs.length + "\n"
                     + "La plus grande valeur est : " + valMax);
+            scanner.close();
         }catch (Exception e){}
     }
+
+    private static void exo5(){
+        Scanner scanner = new Scanner(System.in);
+        String reponse;
+        try{
+            do {
+                exo1();
+                System.out.println("Recommencer ?");
+                reponse = scanner.nextLine();
+            } while (reponse.equalsIgnoreCase("oui") || reponse.equalsIgnoreCase("o"));
+            System.out.println("Au revoir :)");
+        }catch (Exception e) {}
+    }
+
+    private static void exo6() {
+        int[] numbers = new int[6];
+        int[] originalNumbers = new int[6];
+        boolean swapped;
+        Scanner scanner = new Scanner(System.in);
+
+        try {
+            System.out.println("Entrez un nombre entier :");
+            numbers[0] = scanner.nextInt();
+            System.out.println("Entrez un 2e nombre entier :");
+            numbers[1] = scanner.nextInt();
+            System.out.println("Entrez un 3e nombre entier :");
+            numbers[2] = scanner.nextInt();
+            System.out.println("Entrez un 4e nombre entier :");
+            numbers[3] = scanner.nextInt();
+            System.out.println("Entrez un 5e nombre entier :");
+            numbers[4] = scanner.nextInt();
+            System.out.println("Entrez un 6e nombre entier :");
+            numbers[5] = scanner.nextInt();
+
+            originalNumbers = numbers.clone();
+
+            do {
+                swapped = false;
+                for (int i = 1; i < numbers.length; i++) {
+                    if (numbers[i - 1] > numbers[i]) {
+                        int temp = numbers[i - 1];
+                        numbers[i - 1] = numbers[i];
+                        numbers[i] = temp;
+                        swapped = true;
+                    }
+                }
+            } while (swapped);
+        } catch (Exception e) {}
+
+        System.out.print("Le tableau obtenu initial est : ");
+        for (int originalNums : originalNumbers) {
+            System.out.print(originalNums + " ");
+        }
+        System.out.print("\nVoici le tableau trié : ");
+        for (int number : numbers) {
+            System.out.print(number + " ");
+        }
+    }
 }
+
+
+//            System.out.println("Entrez un nombre entier :");
+//            numbers[0] = scanner.nextInt();
+//            System.out.println("Entrez un 2e nombre entier :");
+//            numbers[1] = scanner.nextInt();
+//            System.out.println("Entrez un 3e nombre entier :");
+//            numbers[2] = scanner.nextInt();
+//            System.out.println("Entrez un 4e nombre entier :");
+//            numbers[3] = scanner.nextInt();
+//            System.out.println("Entrez un 5e nombre entier :");
+//            numbers[4] = scanner.nextInt();
+//            System.out.println("Entrez un 6e nombre entier :");
+//            numbers[5] = scanner.nextInt();
+//            System.out.println("Entrez un 7e nombre entier :");
+//            numbers[6] = scanner.nextInt();
