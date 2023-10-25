@@ -1,16 +1,14 @@
 package Exercices;
 import java.util.Scanner;
-
 public class Exo3 {
 
     public static String multiply(int a){
-        StringBuilder table = new StringBuilder();
+        String table = "";
         for (int number = 0; number <= 10; number++) {
-            table.append(a).append(" x ").append(number).append(" = ").append(a * number).append("\n");
+            table += a + " x " + number + " = " + a*number + "\n";
         }
-        return table.toString();
+        return table;
     }
-
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Entrez un nombre pour voir sa table de multiplication :");
