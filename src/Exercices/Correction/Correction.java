@@ -102,7 +102,10 @@ public class Correction {
     private static void exo6() {
         int[] numbers = new int[6];
         int[] originalNumbers = new int[6];
+        int temp;
         boolean swapped;
+        String output = "";
+        String output2 = "";
         Scanner scanner = new Scanner(System.in);
 
         try {
@@ -125,7 +128,7 @@ public class Correction {
                 swapped = false;
                 for (int i = 1; i < numbers.length; i++) {
                     if (numbers[i - 1] > numbers[i]) {
-                        int temp = numbers[i - 1];
+                        temp = numbers[i - 1];
                         numbers[i - 1] = numbers[i];
                         numbers[i] = temp;
                         swapped = true;
@@ -136,27 +139,14 @@ public class Correction {
 
         System.out.print("Le tableau obtenu initial est : ");
         for (int originalNums : originalNumbers) {
-            System.out.print(originalNums + " ");
+            output += originalNums + " ";
         }
+        System.out.println(output);
+
         System.out.print("\nVoici le tableau trié : ");
         for (int number : numbers) {
-            System.out.print(number + " ");
+            output2 += number + " ";
         }
+        System.out.println(output2);
     }
 }
-
-
-//            System.out.println("Entrez un nombre entier :");
-//            numbers[0] = scanner.nextInt();
-//            System.out.println("Entrez un 2e nombre entier :");
-//            numbers[1] = scanner.nextInt();
-//            System.out.println("Entrez un 3e nombre entier :");
-//            numbers[2] = scanner.nextInt();
-//            System.out.println("Entrez un 4e nombre entier :");
-//            numbers[3] = scanner.nextInt();
-//            System.out.println("Entrez un 5e nombre entier :");
-//            numbers[4] = scanner.nextInt();
-//            System.out.println("Entrez un 6e nombre entier :");
-//            numbers[5] = scanner.nextInt();
-//            System.out.println("Entrez un 7e nombre entier :");
-//            numbers[6] = scanner.nextInt();
